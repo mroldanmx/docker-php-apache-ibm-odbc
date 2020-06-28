@@ -33,10 +33,10 @@ COPY etc/exim4/exim4.conf /etc/exim4/exim4.conf
 RUN chmod 644 /etc/exim4/exim4.conf
 
 RUN composer global require hirak/prestissimo
-RUN pecl install -f xdebug && \
-echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini
-
-ENV XDEBUG_CONFIG="remote_host=host.docker.internal remote_port=9000 remote_enable=1"
+#RUN pecl install -f xdebug && \
+#echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini
+#
+#ENV XDEBUG_CONFIG="remote_host=host.docker.internal remote_port=9000 remote_enable=1"
 
 RUN /usr/sbin/a2ensite default-ssl
 RUN /usr/sbin/a2enmod ssl 
