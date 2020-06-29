@@ -38,8 +38,8 @@ echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /
 
 ENV XDEBUG_CONFIG="remote_host=host.docker.internal remote_port=9000 remote_enable=1"
 
-RUN /usr/sbin/a2ensite default-ssl
-RUN /usr/sbin/a2enmod ssl 
+#RUN /usr/sbin/a2ensite default-ssl
+#RUN /usr/sbin/a2enmod ssl 
 RUN /usr/sbin/a2enmod rewrite
 EXPOSE 80
 EXPOSE 443
